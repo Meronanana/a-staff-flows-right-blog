@@ -1,0 +1,17 @@
+@keyframes darkmode-icon-stm {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -1.5em;
+  }
+}
+
+@keyframes darkmode-icon-mts {
+  0% {
+    top: -1.5em;
+  }
+  100% {
+    top: 0;
+  }
+}
