@@ -63,12 +63,11 @@ export default function Post({ params }: Props) {
                 height={0}
                 sizes="100vw"
               />
-              <h1 className="font-bold text-2xl">{title.title}</h1>
+              <h1 className="pt-2 font-bold text-2xl">{title.title}</h1>
               <p className="text-gray-400">{title.date}</p>
             </div>
           )
         }
-
         {articles &&
           articles.map((v, i) => {
             return (
@@ -76,11 +75,29 @@ export default function Post({ params }: Props) {
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
+                    a: ({ ...props }) => {
+                      return (
+                        <a
+                          href={props.href}
+                          target="_blank"
+                          className="text-blue-500"
+                        >
+                          {props.children}
+                        </a>
+                      );
+                    },
                     blockquote: ({ ...props }) => {
                       return (
-                        <blockquote className="p-2 pl-4 border-l-4 rounded-ee-lg bg-gray-400/30 border-gray-400">
+                        <blockquote className="p-2 pl-4 border-l-4 rounded-ee-lg bg-gray-200 border-gray-400 dark:bg-gray-600">
                           {props.children}
                         </blockquote>
+                      );
+                    },
+                    code: ({ ...props }) => {
+                      return (
+                        <code className="rounded-sm px-1 bg-gray-200 dark:bg-gray-600">
+                          {props.children}
+                        </code>
                       );
                     },
                     img: ({ ...props }) => {

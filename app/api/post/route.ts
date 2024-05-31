@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   let markdown: string;
   try {
     markdown = fs.readFileSync(
-      path.join(process.cwd(), `./public/posts/${body.slug}.md`),
+      path.join(process.cwd(), `./public/assets/posts/${body.slug}.md`),
       "utf8"
     );
   } catch (e) {
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   const { data, content } = matter(markdown);
 
   // split with '&new' annotation
-  const splitMd: PostContent = content.split("&new");
+  const splitMd: PostContent = content.split("&new\r\n");
 
   return Response.json({ data: data, content: splitMd }, { status: 200 });
 }
