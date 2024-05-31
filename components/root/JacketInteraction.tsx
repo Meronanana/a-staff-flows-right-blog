@@ -47,7 +47,7 @@ export default function JacketInteraction({ data }: { data: PostData }) {
         id={`jacket-above-text-${data.path}`}
         className="relative translate-y-[-100%] top-[-100%] left-0 w-full px-3 py-2 opacity-0 duration-500"
       >
-        <p className="font-bold italic text-3xl">{data.title}</p>
+        <p className="font-serif font-bold italic text-3xl">{data.title}</p>
       </div>
     </div>
   );
