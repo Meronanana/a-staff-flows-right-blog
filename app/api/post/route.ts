@@ -5,19 +5,25 @@ import path from "path";
 export async function GET(request: Request) {}
 
 export async function POST(request: Request) {
-  const body = await request.body
-    ?.getReader()
-    .read()
-    .then(({ value }) => JSON.parse(value?.toLocaleString() as string));
+  let body;
+  if (request.body) {
+    body = await request.body
+      .getReader()
+      .read()
+      .then(({ value }) => {
+        if (value) {
+          // console.log("value: ", Buffer.from(value).toString("utf-8"));
+          return JSON.parse(Buffer.from(value).toString("utf-8"));
+        }
+      });
+  }
 
   // read markdown file
   let markdown: string;
   try {
-    markdown = fs.readFileSync(
-      path.join(process.cwd(), `./public/assets/posts/${body.slug}.md`),
-      "utf8"
-    );
+    markdown = fs.readFileSync(path.join(process.cwd(), `./public/assets/posts/${body.slug}.md`), "utf8");
   } catch (e) {
+    console.log(e);
     return Response.json({ message: "File not found" }, { status: 404 });
   }
 
