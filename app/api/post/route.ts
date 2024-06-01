@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   const { data, content } = matter(markdown);
 
   // split with '&new' annotation
-  const splitMd: PostContent = content.split("&new\r\n");
+  const splitMd: PostContent = content.split("\n&new\n");
 
   return Response.json({ data: data, content: splitMd }, { status: 200 });
 }
