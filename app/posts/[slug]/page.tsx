@@ -88,7 +88,7 @@ export default function Post({ params }: Props) {
       }
     });
 
-    fetch("/api/post", {
+    fetch(`${process.env.NEXT_PUBLIC_URL}/api/post`, {
       method: "POST",
       body: JSON.stringify({ slug: params.slug }),
     })

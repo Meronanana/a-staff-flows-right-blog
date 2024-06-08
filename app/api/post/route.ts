@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   let markdown: string;
   try {
     markdown = fs.readFileSync(
-      path.join(process.cwd(), `/public/assets/posts/${body.slug}.md`),
+      path.join(process.cwd(), `public/assets/posts/${body.slug}.md`),
       "utf8"
     );
   } catch (e) {
