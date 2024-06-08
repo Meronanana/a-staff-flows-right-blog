@@ -12,12 +12,22 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const parentMetadata = await parent;
-  let markdown = fs.readFileSync(
-    path.join(process.cwd(), `./public/assets/posts/${params.slug}.md`),
-    "utf8"
-  );
+  // let markdown = fs.readFileSync(
+  //   path.join(process.cwd(), `public/assets/posts/${params.slug}.md`),
+  //   "utf8"
+  // );
 
-  const data = matter(markdown).data as PostData;
+  // const data = matter(markdown).data as PostData;
+
+  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/post`, {
+    method: "POST",
+    body: JSON.stringify({ slug: params.slug }),
+  })
+    .then((res) => {
+      if (res.status === 404) return { data: undefined };
+      else return res.json();
+    })
+    .then((body) => body.data as PostData);
 
   return {
     title: `${data.title} - ${parentMetadata.title?.absolute}`,
@@ -25,7 +35,7 @@ export async function generateMetadata(
     openGraph: {
       title: `${data.title} - ${parentMetadata.title?.absolute}`,
       description: data.description,
-      url: `https://asfr.vercel.app/posts/${params.slug}`,
+      url: `${process.env.NEXT_PUBLIC_URL}/${params.slug}`,
       siteName: "A Staff Flows Right",
       images: [data.coverImage],
       locale: "ko_KR",
