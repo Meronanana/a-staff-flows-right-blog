@@ -19,7 +19,7 @@ export default function Showcase() {
       }
     });
 
-    fetch(`${process.env.NEXT_PUBLIC_URL}/api/post/data`, {
+    fetch(`/api/post/data`, {
       method: "POST",
     })
       .then((res) => res.text())
