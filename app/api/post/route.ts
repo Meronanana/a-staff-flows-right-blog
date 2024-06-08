@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import os from "os";
 
 export async function GET(request: Request) {}
 
@@ -33,7 +34,12 @@ export async function POST(request: Request) {
   const { data, content } = matter(markdown);
 
   // split with '&new' annotation
-  const splitMd: PostContent = content.split("\n&new\n");
+  let splitMd: PostContent;
+  if (os.type().includes("Windows")) {
+    splitMd = content.split("&new\r\n");
+  } else {
+    splitMd = content.split("\n&new\n");
+  }
 
   return Response.json({ data: data, content: splitMd }, { status: 200 });
 }
