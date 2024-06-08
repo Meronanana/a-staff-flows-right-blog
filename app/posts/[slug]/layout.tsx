@@ -1,7 +1,5 @@
 import matter from "gray-matter";
 import { Metadata, ResolvingMetadata } from "next";
-import fs from "fs";
-import path from "path";
 
 interface Props {
   params: { slug: string };
@@ -12,12 +10,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const parentMetadata = await parent;
-  // let markdown = fs.readFileSync(
-  //   path.join(process.cwd(), `public/assets/posts/${params.slug}.md`),
-  //   "utf8"
-  // );
-
-  // const data = matter(markdown).data as PostData;
 
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/post`, {
     method: "POST",
@@ -37,7 +29,11 @@ export async function generateMetadata(
       description: data.description,
       url: `${process.env.NEXT_PUBLIC_URL}/${params.slug}`,
       siteName: "A Staff Flows Right",
-      images: [data.coverImage],
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_URL}${data.coverImage}`,
+        },
+      ],
       locale: "ko_KR",
       type: "website",
     },
