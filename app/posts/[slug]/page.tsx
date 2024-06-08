@@ -13,6 +13,64 @@ const MARKDOWN_404 = JSON.stringify({
   content: ["# 404 Page Error", "Check post name on your URL"],
 });
 
+const markdownComponents = {
+  a: ({ ...props }) => {
+    return (
+      <a href={props.href} target="_blank" className="text-blue-500">
+        {props.children}
+      </a>
+    );
+  },
+  blockquote: ({ ...props }) => {
+    return (
+      <blockquote className="p-2 pl-4 border-l-4 rounded-ee-lg bg-gray-200 border-gray-400 dark:bg-gray-600">
+        {props.children}
+      </blockquote>
+    );
+  },
+  code: ({ ...props }) => {
+    return (
+      <code className="font-sans rounded-sm px-1 bg-gray-200 dark:bg-gray-600">
+        {props.children}
+      </code>
+    );
+  },
+  img: ({ ...props }) => {
+    return (
+      <>
+        <Image
+          className="w-full"
+          src={(props.src as string).replace("/public", "")}
+          alt={props.alt as string}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+        <p className="font-sans mt-1 text-xs text-gray-400">{props.alt}</p>
+      </>
+    );
+  },
+  h1: ({ ...props }) => {
+    return <h1 className="font-bold text-xl">{props.children}</h1>;
+  },
+  h2: ({ ...props }) => {
+    return <h2 className="font-bold text-xl">{props.children}</h2>;
+  },
+  h3: ({ ...props }) => {
+    return <h3 className="font-bold text-xl">{props.children}</h3>;
+  },
+  hr: ({ ...props }) => {
+    return (
+      <div className="py-2">
+        <hr className="dark:border-gray-700" />
+      </div>
+    );
+  },
+  p: ({ ...props }) => {
+    return <div className="whitespace-normal break-keep">{props.children}</div>;
+  },
+};
+
 export default function Post({ params }: Props) {
   const [title, setTitle] = useState<PostData>();
   const [articles, setArticles] = useState<PostContent>();
@@ -74,74 +132,7 @@ export default function Post({ params }: Props) {
               <div key={i} className="w-[22em] space-y-2 p-2">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
-                  components={{
-                    a: ({ ...props }) => {
-                      return (
-                        <a
-                          href={props.href}
-                          target="_blank"
-                          className="text-blue-500"
-                        >
-                          {props.children}
-                        </a>
-                      );
-                    },
-                    blockquote: ({ ...props }) => {
-                      return (
-                        <blockquote className="p-2 pl-4 border-l-4 rounded-ee-lg bg-gray-200 border-gray-400 dark:bg-gray-600">
-                          {props.children}
-                        </blockquote>
-                      );
-                    },
-                    code: ({ ...props }) => {
-                      return (
-                        <code className="rounded-sm px-1 bg-gray-200 dark:bg-gray-600">
-                          {props.children}
-                        </code>
-                      );
-                    },
-                    img: ({ ...props }) => {
-                      return (
-                        <Image
-                          className="w-full"
-                          src={(props.src as string).replace("/public", "")}
-                          alt={props.alt as string}
-                          width={0}
-                          height={0}
-                          sizes="100vw"
-                        />
-                      );
-                    },
-                    h1: ({ ...props }) => {
-                      return (
-                        <h1 className="font-bold text-xl">{props.children}</h1>
-                      );
-                    },
-                    h2: ({ ...props }) => {
-                      return (
-                        <h2 className="font-bold text-xl">{props.children}</h2>
-                      );
-                    },
-                    h3: ({ ...props }) => {
-                      return (
-                        <h3 className="font-bold text-xl">{props.children}</h3>
-                      );
-                    },
-                    hr: ({ ...props }) => {
-                      return (
-                        <div className="py-2">
-                          <hr className="dark:border-gray-700" />
-                        </div>
-                      );
-                    },
-                    p: ({ ...props }) => {
-                      return (
-                        <p className="whitespace-normal break-keep">
-                          {props.children}
-                        </p>
-                      );
-                    },
-                  }}
+                  components={markdownComponents}
                 >
                   {v}
                 </ReactMarkdown>
