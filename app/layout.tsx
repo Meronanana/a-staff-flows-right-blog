@@ -8,8 +8,8 @@ import DarkmodeIcon from "@/components/root/DarkmodeIcon";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  // title: "A Staff Flows Right (블로그!)",
-  // description: "음악 이야기를 써요",
+  title: "A Staff Flows Right",
+  description: "음악 이야기를 써요",
   openGraph: {
     title: "A Staff Flows Right (블로그!)",
     description: "음악 이야기를 써요",
