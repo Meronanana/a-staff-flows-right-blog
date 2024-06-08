@@ -13,7 +13,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const parentMetadata = await parent;
   let markdown = fs.readFileSync(
-    path.join(process.cwd(), `./public/assets/posts/${params.slug}.md`),
+    path.join(process.cwd(), `/public/assets/posts/${params.slug}.md`),
     "utf8"
   );
 
