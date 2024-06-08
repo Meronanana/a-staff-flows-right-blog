@@ -36,10 +36,9 @@ export default function Post({ params }: Props) {
     })
       .then((res) => {
         if (res.status === 404) return Promise.resolve(MARKDOWN_404);
-        else return res.text();
+        else return res.json();
       })
-      .then((text) => {
-        const body = JSON.parse(text);
+      .then((body) => {
         setTitle(body.data);
         setArticles(body.content);
       });
