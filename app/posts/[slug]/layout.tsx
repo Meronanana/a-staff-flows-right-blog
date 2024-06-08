@@ -31,7 +31,7 @@ export async function generateMetadata(
       siteName: "A Staff Flows Right",
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_URL}/${data.coverImage}`,
+          url: `${process.env.NEXT_PUBLIC_URL}${data.coverImage}`,
         },
       ],
       locale: "ko_KR",
