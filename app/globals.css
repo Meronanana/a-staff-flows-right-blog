@@ -73,6 +73,10 @@ body {
   border-radius: 5px;
 }
 
+#article-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 body.dark #post-wrapper::-webkit-scrollbar-thumb {
   background-color: rgb(75, 85, 99); /*gray-600*/
   border: 2px solid rgb(31, 41, 55); /*gray-800*/

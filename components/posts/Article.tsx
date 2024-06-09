@@ -4,8 +4,13 @@ export default function Article({
   children: JSX.Element | JSX.Element[];
 }) {
   return (
-    <div className="w-[22em] max-h-[826px] space-y-2 p-2 overflow-y-auto">
-      {children}
+    <div
+      id="article-wrapper"
+      className="w-[22rem] max-h-[calc(100vh-10rem)] p-2 overflow-y-auto"
+    >
+      <div className="max-h-[826px] space-y-2 overflow-y-hidden">
+        {children}
+      </div>
     </div>
   );
 }

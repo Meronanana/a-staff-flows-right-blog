@@ -106,9 +106,9 @@ export default function Post({ params }: Props) {
   return (
     <div
       id="post-wrapper"
-      className="flex px-[10vw] max-h-[85vh] items-center whitespace-nowrap overflow-x-auto overflow-y-auto"
+      className="flex px-[10vw] items-center whitespace-nowrap overflow-x-auto"
     >
-      <div className="flex h-full space-x-4 py-2 border-t-2 border-gray-400 dark:border-gray-600 ">
+      <div className="flex space-x-4 py-2 border-t-2 border-gray-400 dark:border-gray-600 ">
         {
           /* Title 부분 */
           title && (
