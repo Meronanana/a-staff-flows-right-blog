@@ -24,31 +24,16 @@ const markdownComponents = {
   },
   blockquote: ({ ...props }) => {
     return (
-      <blockquote className="p-2 pl-4 border-l-4 rounded-ee-lg bg-gray-200 border-gray-400 dark:bg-gray-600">
+      <blockquote className="p-2 pl-4 space-y-2 border-l-4 rounded-ee-lg bg-gray-200 border-gray-400 dark:bg-gray-700">
         {props.children}
       </blockquote>
     );
   },
   code: ({ ...props }) => {
     return (
-      <code className="font-sans rounded-sm px-1 bg-gray-200 dark:bg-gray-600">
+      <code className="font-sans rounded-sm px-1 bg-gray-200 dark:bg-gray-700">
         {props.children}
       </code>
-    );
-  },
-  img: ({ ...props }) => {
-    return (
-      <>
-        <Image
-          className="w-full"
-          src={(props.src as string).replace("/public", "")}
-          alt={props.alt as string}
-          width={0}
-          height={0}
-          sizes="100vw"
-        />
-        <p className="font-sans mt-1 text-xs text-gray-400">{props.alt}</p>
-      </>
     );
   },
   h1: ({ ...props }) => {
@@ -66,6 +51,24 @@ const markdownComponents = {
         <hr className="dark:border-gray-700" />
       </div>
     );
+  },
+  img: ({ ...props }) => {
+    return (
+      <>
+        <Image
+          className="w-full"
+          src={(props.src as string).replace("/public", "")}
+          alt={props.alt as string}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+        <p className="font-sans mt-1 text-xs text-gray-400">{props.alt}</p>
+      </>
+    );
+  },
+  ol: ({ ...props }) => {
+    return <ol className="list-decimal pl-6">{props.children}</ol>;
   },
   p: ({ ...props }) => {
     return <div className="whitespace-normal break-keep">{props.children}</div>;

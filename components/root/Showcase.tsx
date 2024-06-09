@@ -15,7 +15,8 @@ export default function Showcase() {
       const docElem = document.documentElement;
 
       if (docElem.clientHeight === docElem.scrollHeight && !e.shiftKey) {
-        showcase.scrollLeft += e.deltaY * 5;
+        if (docElem.clientWidth < 1024) showcase.scrollLeft += e.deltaY * 5;
+        else showcase.scrollLeft += e.deltaY * 10;
       }
     });
 
