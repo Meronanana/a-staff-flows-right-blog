@@ -4,6 +4,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
 import remarkGfm from "remark-gfm";
+import Article from "@/components/posts/Article";
 
 interface Props {
   params: { slug: string };
@@ -105,13 +106,13 @@ export default function Post({ params }: Props) {
   return (
     <div
       id="post-wrapper"
-      className="flex px-[10vw] items-center whitespace-nowrap overflow-x-auto"
+      className="flex px-[10vw] max-h-[85vh] items-center whitespace-nowrap overflow-x-auto overflow-y-auto"
     >
-      <div className="flex space-x-4 py-2 border-t-2 border-gray-400 dark:border-gray-600">
+      <div className="flex h-full space-x-4 py-2 border-t-2 border-gray-400 dark:border-gray-600 ">
         {
           /* Title 부분 */
           title && (
-            <div className="w-[22em] space-y-2 p-2">
+            <Article>
               <Image
                 className="w-full"
                 src={title.coverImage}
@@ -122,20 +123,20 @@ export default function Post({ params }: Props) {
               />
               <h1 className="pt-2 font-bold text-2xl">{title.title}</h1>
               <p className="text-gray-400">{title.date}</p>
-            </div>
+            </Article>
           )
         }
         {articles &&
           articles.map((v, i) => {
             return (
-              <div key={i} className="w-[22em] space-y-2 p-2">
+              <Article key={i}>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={markdownComponents}
                 >
                   {v}
                 </ReactMarkdown>
-              </div>
+              </Article>
             );
           })}
       </div>
