@@ -31,6 +31,18 @@
   }
 }
 
+@media (max-width: 964px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -59,6 +71,10 @@ body {
   background-color: rgb(209, 213, 219); /*gray-300*/
   border: 2px solid white;
   border-radius: 5px;
+}
+
+#article-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 body.dark #post-wrapper::-webkit-scrollbar-thumb {

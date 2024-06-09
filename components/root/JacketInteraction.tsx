@@ -26,6 +26,18 @@ export default function JacketInteraction({ data }: { data: PostData }) {
         jacketOverText && jacketOverText.classList.remove("opacity-100");
         jacketAboveText && jacketAboveText.classList.remove("opacity-100");
       });
+
+    jacketPackage &&
+      jacketPackage.addEventListener("touchstart", () => {
+        jacketOverText && jacketOverText.classList.add("opacity-100");
+        jacketAboveText && jacketAboveText.classList.add("opacity-100");
+      });
+
+    jacketPackage &&
+      jacketPackage.addEventListener("touchend", () => {
+        jacketOverText && jacketOverText.classList.remove("opacity-100");
+        jacketAboveText && jacketAboveText.classList.remove("opacity-100");
+      });
   }, []);
 
   return (
