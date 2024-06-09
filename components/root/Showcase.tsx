@@ -19,7 +19,7 @@ export default function Showcase() {
       }
     });
 
-    fetch("/api/post/data", {
+    fetch(`/api/post/data`, {
       method: "POST",
     })
       .then((res) => res.text())
