@@ -85,7 +85,7 @@ export default function Post({ params }: Props) {
       const docElem = document.documentElement;
 
       if (docElem.clientHeight === docElem.scrollHeight && !e.shiftKey) {
-        postWrapper.scrollLeft += e.deltaY;
+        postWrapper.scrollLeft += e.deltaY / 2;
       }
     });
 

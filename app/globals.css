@@ -73,7 +73,7 @@ body {
   border-radius: 5px;
 }
 
-#article-wrapper::-webkit-scrollbar {
+.article-wrapper::-webkit-scrollbar {
   display: none;
 }
 
