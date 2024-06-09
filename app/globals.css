@@ -31,6 +31,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
