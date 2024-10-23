@@ -5,6 +5,7 @@ import os from "os";
 
 export async function GET(request: Request) {}
 
+// Get post content
 export async function POST(request: Request) {
   let body;
   if (request.body) {

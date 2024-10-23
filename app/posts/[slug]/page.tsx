@@ -105,6 +105,7 @@ export default function Post({ params }: Props) {
         setArticles(body.content);
       });
 
+    // Add 1 credit when user read a post
     fetch(`/api/credit`, {
       method: "PATCH",
     });
