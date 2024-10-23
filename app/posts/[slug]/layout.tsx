@@ -1,4 +1,3 @@
-import matter from "gray-matter";
 import { Metadata, ResolvingMetadata } from "next";
 
 interface Props {
