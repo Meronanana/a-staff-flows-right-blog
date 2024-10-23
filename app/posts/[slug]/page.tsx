@@ -104,6 +104,10 @@ export default function Post({ params }: Props) {
         setTitle(body.data);
         setArticles(body.content);
       });
+
+    fetch(`/api/credit`, {
+      method: "PATCH",
+    });
   }, []);
 
   return (
