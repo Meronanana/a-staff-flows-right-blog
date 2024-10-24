@@ -112,6 +112,9 @@ export default function Post({ params }: Props) {
     // Add 1 credit when user read a post
     fetch(`/api/credit`, {
       method: "PATCH",
+      body: JSON.stringify({
+        userId: process.env.NODE_ENV === "production" ? 1 : 2,
+      }),
     }).then(() => {
       dispatch(increment());
     });
