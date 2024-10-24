@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import LayoutHeader from "@/components/root/LayoutHeader";
+import LayoutHeader from "@/components/root/header/LayoutHeader";
 import LayoutFooter from "@/components/root/LayoutFooter";
 
 import "./globals.css";

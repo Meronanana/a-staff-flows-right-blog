@@ -1,22 +1,20 @@
-"use client";
-
 import Link from "next/link";
 import DarkmodeIcon from "./DarkmodeIcon";
-import { useEffect, useState } from "react";
+import CreditDisplay from "./CreditDisplay";
+import StoreProvider from "@/app/StoreProvider";
 
 export default function LayoutHeader() {
-  const [balance, setBalance] = useState<number>(0);
-
-  useEffect(() => {
-    fetch(`/api/credit`, {
-      method: "GET",
-    })
-      .then((res) => {
-        if (res.status === 404) return { data: undefined };
-        else return res.json();
-      })
-      .then((body) => setBalance(body.balance));
-  }, []);
+  // const [balance, setBalance] = useState<number>(0);
+  // useEffect(() => {
+  //   fetch(`/api/credit`, {
+  //     method: "GET",
+  //   })
+  //     .then((res) => {
+  //       if (res.status === 404) return { data: undefined };
+  //       else return res.json();
+  //     })
+  //     .then((body) => setBalance(body.balance));
+  // }, []);
 
   return (
     <div
@@ -28,7 +26,11 @@ export default function LayoutHeader() {
         <b className="text-2xl">F</b>lows <b className="text-2xl">R</b>ight
       </Link>
       <ul className="flex flex-row ">
-        <li className="flex items-center ml-5 h-7">{balance}</li>
+        <li className="flex items-center ml-5 h-7">
+          <StoreProvider>
+            <CreditDisplay />
+          </StoreProvider>
+        </li>
         <li className="flex items-center ml-5 h-7">
           <DarkmodeIcon />
         </li>

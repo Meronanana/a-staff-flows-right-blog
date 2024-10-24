@@ -1,10 +1,10 @@
 import { sql } from "@vercel/postgres";
 
 // Get credit balance
-export async function GET(request: Request) {
+export async function GET() {
   const credit = await sql`SELECT * FROM Credit WHERE user_id = 1`;
 
-  return Response.json({ ...credit.rows[0] });
+  return Response.json({ ...credit.rows[0] }, { status: 200 });
 }
 
 export async function POST(request: Request) {}
