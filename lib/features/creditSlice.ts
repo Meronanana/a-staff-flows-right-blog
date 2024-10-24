@@ -10,7 +10,7 @@ export interface CreditState {
 // Define the initial state using that type
 const initialState: CreditState = {
   userId: 1,
-  balance: -1,
+  balance: NaN,
 };
 
 export const creditSlice = createSlice({

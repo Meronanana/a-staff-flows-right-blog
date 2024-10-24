@@ -4,7 +4,7 @@ import { useAppSelector } from "@/lib/hooks";
 import { useEffect, useRef, useState } from "react";
 
 export default function CreditDisplay() {
-  const [balance, setBalance] = useState<number>(-1);
+  const [balance, setBalance] = useState<number>(NaN);
   const contentRef = useRef<HTMLDivElement>(null);
   const balanceRef = useRef<HTMLDivElement>(null);
   const increaseTextRef = useRef<HTMLDivElement>(null);
@@ -66,7 +66,7 @@ export default function CreditDisplay() {
         {"Credit"}
         <div className="mx-2">:</div>
       </div>
-      <div>{balance === -1 ? "-" : balance}</div>
+      <div>{balance ? balance : "-"}</div>
       <div
         ref={increaseTextRef}
         id="increase-text"
