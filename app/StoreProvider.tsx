@@ -15,7 +15,12 @@ export default function StoreProvider({
     storeRef.current = getStore();
 
     // Initialize credit balance
-    fetch("/api/credit")
+    fetch(`${process.env.NEXT_PUBLIC_URL}/api/credit`, {
+      method: "POST",
+      body: JSON.stringify({
+        userId: process.env.NODE_ENV === "production" ? 1 : 2,
+      }),
+    })
       .then((res) => res.json())
       .then((data: CreditState) => {
         if (storeRef.current !== null)
