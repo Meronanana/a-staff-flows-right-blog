@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import remarkGfm from "remark-gfm";
 import Article from "@/components/posts/Article";
 import { useAppDispatch } from "@/lib/hooks";
-import { increment } from "@/lib/features/creditSlice";
+import { decrementByAmount, increment } from "@/lib/features/creditSlice";
 
 interface Props {
   params: { slug: string };
@@ -114,7 +114,6 @@ export default function Post({ params }: Props) {
       method: "PATCH",
     }).then(() => {
       dispatch(increment());
-      console.log("PATCH!");
     });
   }, []);
 
