@@ -5,6 +5,8 @@ import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
 import remarkGfm from "remark-gfm";
 import Article from "@/components/posts/Article";
+import { useAppDispatch } from "@/lib/hooks";
+import { decrementByAmount, increment } from "@/lib/features/creditSlice";
 
 interface Props {
   params: { slug: string };
@@ -79,6 +81,8 @@ export default function Post({ params }: Props) {
   const [title, setTitle] = useState<PostData>();
   const [articles, setArticles] = useState<PostContent>();
 
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     const postWrapper = document.getElementById("post-wrapper");
 
@@ -104,6 +108,13 @@ export default function Post({ params }: Props) {
         setTitle(body.data);
         setArticles(body.content);
       });
+
+    // Add 1 credit when user read a post
+    fetch(`/api/credit`, {
+      method: "PATCH",
+    }).then(() => {
+      dispatch(increment());
+    });
   }, []);
 
   return (
