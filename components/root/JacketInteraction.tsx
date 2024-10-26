@@ -19,29 +19,43 @@ export default function JacketInteraction({ data }: { data: PostData }) {
     const jacketAboveText = document.getElementById(
       `jacket-above-text-${data.path}`
     );
+    const leftSideShadow = document.getElementById(
+      `jacket-left-side-shadow-${data.path}`
+    ) as HTMLElement;
+    const rightSideShadow = document.getElementById(
+      `jacket-right-side-shadow-${data.path}`
+    ) as HTMLElement;
 
     jacketPackage &&
       jacketPackage.addEventListener("mouseover", () => {
         jacketOverText && jacketOverText.classList.add("opacity-100");
         jacketAboveText && jacketAboveText.classList.add("opacity-100");
+        leftSideShadow && leftSideShadow.classList.add("opacity-80");
+        rightSideShadow && rightSideShadow.classList.add("opacity-80");
       });
 
     jacketPackage &&
       jacketPackage.addEventListener("mouseleave", () => {
         jacketOverText && jacketOverText.classList.remove("opacity-100");
         jacketAboveText && jacketAboveText.classList.remove("opacity-100");
+        leftSideShadow && leftSideShadow.classList.remove("opacity-80");
+        rightSideShadow && rightSideShadow.classList.remove("opacity-80");
       });
 
     jacketPackage &&
       jacketPackage.addEventListener("touchstart", () => {
         jacketOverText && jacketOverText.classList.add("opacity-100");
         jacketAboveText && jacketAboveText.classList.add("opacity-100");
+        leftSideShadow && leftSideShadow.classList.add("opacity-80");
+        rightSideShadow && rightSideShadow.classList.add("opacity-80");
       });
 
     jacketPackage &&
       jacketPackage.addEventListener("touchend", () => {
         jacketOverText && jacketOverText.classList.remove("opacity-100");
         jacketAboveText && jacketAboveText.classList.remove("opacity-100");
+        leftSideShadow && leftSideShadow.classList.remove("opacity-80");
+        rightSideShadow && rightSideShadow.classList.remove("opacity-80");
       });
   }, [data.path]);
 
@@ -54,8 +68,8 @@ export default function JacketInteraction({ data }: { data: PostData }) {
       `jacket-right-side-${data.path}`
     );
 
-    // jacketLeftSide && (jacketLeftSide.style.transform = `rotateY(-90deg)`);
-    // jacketRightSide && (jacketRightSide.style.transform = `rotateY(90deg)`);
+    jacketLeftSide && (jacketLeftSide.style.transform = `rotateY(-90deg)`);
+    jacketRightSide && (jacketRightSide.style.transform = `rotateY(90deg)`);
 
     showcase?.addEventListener("scroll", (e) => {
       const target = e.target as HTMLElement;
@@ -86,10 +100,6 @@ export default function JacketInteraction({ data }: { data: PostData }) {
             )
           : 90;
 
-      if (data.path === "240608_attention") {
-        console.log(scrollPos, jacketPos, jacketWidth);
-        console.log("ANGLE", leftSideAngle, rightSideAngle);
-      }
       if (jacketLeftSide && jacketRightSide) {
         jacketLeftSide.style.transform = `perspective(${prspctvDist}px) rotateY(${leftSideAngle}deg)`;
         jacketRightSide.style.transform = `perspective(${prspctvDist}px) rotateY(${rightSideAngle}deg)`;
@@ -123,7 +133,10 @@ export default function JacketInteraction({ data }: { data: PostData }) {
         id={`jacket-left-side-${data.path}`}
         className="absolute w-[4vw] h-[45vw] min-h-32 landscape:w-[4vh] landscape:h-[45vh] top-0 left-[-4vw] landscape:left-[-4vh] origin-bottom-right overflow-hidden bg-black shadow-white-lg dark:shadow-lg"
       >
-        <div className="absolute w-full h-full bg-black opacity-30 z-10"></div>
+        <div
+          id={`jacket-left-side-shadow-${data.path}`}
+          className="absolute w-full h-full bg-burgundy-800 opacity-30 duration-200 z-10 "
+        ></div>
         <Image
           className="w-full h-full"
           src={data.coverImage}
@@ -143,7 +156,10 @@ export default function JacketInteraction({ data }: { data: PostData }) {
         id={`jacket-right-side-${data.path}`}
         className="absolute w-[4vw] h-[45vw] min-h-32 landscape:w-[4vh] landscape:h-[45vh] top-0 right-[-4vw] landscape:right-[-4vh] origin-bottom-left bg-black shadow-white-lg dark:shadow-lg"
       >
-        <div className="absolute w-full h-full bg-black opacity-30 z-10"></div>
+        <div
+          id={`jacket-right-side-shadow-${data.path}`}
+          className="absolute w-full h-full bg-burgundy-800 opacity-30 duration-200 z-10"
+        ></div>
         <Image
           className="w-full h-full"
           src={data.coverImage}
