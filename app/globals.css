@@ -94,7 +94,7 @@ body.dark #post-wrapper::-webkit-scrollbar-thumb {
 }
 
 #showcase::-webkit-scrollbar-track {
-  background: #1b0106;
+  background: #38030e; /*burgundy*/
 }
 
 #showcase::-webkit-scrollbar-thumb {
@@ -107,7 +107,7 @@ body.dark #post-wrapper::-webkit-scrollbar-thumb {
 }
 
 body.dark #showcase::-webkit-scrollbar-track {
-  background: #e6fffd;
+  background: #64748b; /*slate-500*/
 }
 
 body.dark #showcase::-webkit-scrollbar-thumb {

@@ -1,13 +1,18 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { useEffect } from "react";
+import Image from "next/image";
+
+import { getDegreeFromCoordinate } from "@/lib/util";
 
 export default function JacketInteraction({ data }: { data: PostData }) {
+  const jacketPackageRef = useRef<HTMLDivElement>(null);
+  const showcase = document.getElementById("showcase");
+
+  // Add jacket mouse hover event
   useEffect(() => {
-    const jacketPackage = document.getElementById(
-      `jacket-package-${data.path}`
-    );
+    const jacketPackage = jacketPackageRef.current;
     const jacketOverText = document.getElementById(
       `jacket-over-text-${data.path}`
     );
@@ -38,6 +43,58 @@ export default function JacketInteraction({ data }: { data: PostData }) {
         jacketOverText && jacketOverText.classList.remove("opacity-100");
         jacketAboveText && jacketAboveText.classList.remove("opacity-100");
       });
+  }, [data.path]);
+
+  // Jacket side rotation change when jacket position moves
+  useEffect(() => {
+    const jacketLeftSide = document.getElementById(
+      `jacket-left-side-${data.path}`
+    );
+    const jacketRightSide = document.getElementById(
+      `jacket-right-side-${data.path}`
+    );
+
+    // jacketLeftSide && (jacketLeftSide.style.transform = `rotateY(-90deg)`);
+    // jacketRightSide && (jacketRightSide.style.transform = `rotateY(90deg)`);
+
+    showcase?.addEventListener("scroll", (e) => {
+      const target = e.target as HTMLElement;
+      const jacket = document.getElementById(
+        `jacket-${data.path}`
+      ) as HTMLElement;
+
+      const windowWidth = window.innerWidth;
+      const scrollPos = target.scrollLeft;
+      const jacketPos = jacket.offsetLeft;
+      const jacketWidth = jacket.offsetWidth;
+      const jacketInterval = windowWidth * 0.7;
+      const prspctvDist = jacketInterval + jacketWidth;
+
+      const leftSideAngle =
+        scrollPos - (jacketPos - windowWidth / 2) < 0
+          ? -getDegreeFromCoordinate(
+              jacketPos - windowWidth / 2 - scrollPos,
+              prspctvDist
+            )
+          : -90;
+      const rightSideAngle =
+        scrollPos - (jacketPos - windowWidth / 2 + jacketWidth) > 0
+          ? 180 -
+            getDegreeFromCoordinate(
+              jacketPos - windowWidth / 2 + jacketWidth - scrollPos,
+              prspctvDist
+            )
+          : 90;
+
+      if (data.path === "240608_attention") {
+        console.log(scrollPos, jacketPos, jacketWidth);
+        console.log("ANGLE", leftSideAngle, rightSideAngle);
+      }
+      if (jacketLeftSide && jacketRightSide) {
+        jacketLeftSide.style.transform = `perspective(${prspctvDist}px) rotateY(${leftSideAngle}deg)`;
+        jacketRightSide.style.transform = `perspective(${prspctvDist}px) rotateY(${rightSideAngle}deg)`;
+      }
+    });
   }, []);
 
   return (
@@ -45,7 +102,8 @@ export default function JacketInteraction({ data }: { data: PostData }) {
       <Link href={`posts/${data.path}`}>
         <div
           id={`jacket-package-${data.path}`}
-          className="relative top-0 left-0 w-full h-full duration-200 hover:bg-deep-burgundy/70"
+          ref={jacketPackageRef}
+          className="relative top-0 left-0 w-full h-full duration-200 hover:bg-burgundy-800/70 shadow-white-lg dark:shadow-lg"
         >
           <div
             id={`jacket-over-text-${data.path}`}
@@ -60,6 +118,46 @@ export default function JacketInteraction({ data }: { data: PostData }) {
         className="relative translate-y-[-100%] top-[-100%] left-0 w-full px-3 py-2 opacity-0 duration-500"
       >
         <p className="font-serif font-bold italic text-3xl">{data.title}</p>
+      </div>
+      <div
+        id={`jacket-left-side-${data.path}`}
+        className="absolute w-[4vw] h-[45vw] min-h-32 landscape:w-[4vh] landscape:h-[45vh] top-0 left-[-4vw] landscape:left-[-4vh] origin-bottom-right overflow-hidden bg-black shadow-white-lg dark:shadow-lg"
+      >
+        <div className="absolute w-full h-full bg-black opacity-30 z-10"></div>
+        <Image
+          className="w-full h-full"
+          src={data.coverImage}
+          alt={data.path}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            position: "absolute",
+            objectFit: "cover",
+            objectPosition: "left",
+            transform: "scaleX(-1)",
+          }}
+        />
+      </div>
+      <div
+        id={`jacket-right-side-${data.path}`}
+        className="absolute w-[4vw] h-[45vw] min-h-32 landscape:w-[4vh] landscape:h-[45vh] top-0 right-[-4vw] landscape:right-[-4vh] origin-bottom-left bg-black shadow-white-lg dark:shadow-lg"
+      >
+        <div className="absolute w-full h-full bg-black opacity-30 z-10"></div>
+        <Image
+          className="w-full h-full"
+          src={data.coverImage}
+          alt={data.path}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            position: "absolute",
+            objectFit: "cover",
+            objectPosition: "right",
+            transform: "scaleX(-1)",
+          }}
+        />
       </div>
     </div>
   );

@@ -35,7 +35,8 @@ export default function Showcase() {
       id="showcase"
       className="flex px-[50%] items-center whitespace-nowrap overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory"
     >
-      <div id="showcase-inside" className="flex space-x-[25vw] pb-3">
+      <div className="absolute left-0 top-[71vh] w-full h-10 bg-burgundy-900 dark:bg-slate-200"></div>
+      <div id="showcase-inside" className="flex space-x-[25vw] pb-3 z-0">
         {postData &&
           postData.map((v, i) => {
             return <Jacket key={i} data={v} />;
