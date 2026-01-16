@@ -1,4 +1,4 @@
-import matter from "gray-matter";
+import StoreProvider from "@/app/StoreProvider";
 import { Metadata, ResolvingMetadata } from "next";
 
 interface Props {
@@ -45,5 +45,5 @@ export default function PostSlugLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return <StoreProvider>{children}</StoreProvider>;
 }
