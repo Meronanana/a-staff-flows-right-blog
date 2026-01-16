@@ -2,7 +2,7 @@
 title: "How to live LIFE - 부록"
 description: "덧붙여 드리는 말"
 coverImage: "/assets/posts/images/251121_for-admin/jacket.jpg"
-category: "none"
+category: "philosophy"
 date: "2025-11-21"
 path: "251121_for-admin"
 release: false
