@@ -100,7 +100,7 @@ export default function PostGrid() {
     >
       <div
         id="post-grid"
-        className="px-4"
+        className="px-8"
         style={{
           height: "100%",
           display: "grid",
