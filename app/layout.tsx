@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="ko-kr">
       <body
-        className={`${inter.className} flex flex-col font-sans text-black dark:text-white`}
+        className={`${inter.className} flex flex-col font-sans text-black dark:text-white overflow-hidden h-screen`}
       >
         <LayoutHeader />
         {children}

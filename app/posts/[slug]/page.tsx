@@ -16,10 +16,49 @@ const MARKDOWN_404 = JSON.stringify({
   content: ["# 404 Page Error", "Check post name on your URL"],
 });
 
+// Extract YouTube video ID from various URL formats
+const getYouTubeVideoId = (url: string): string | null => {
+  if (!url) return null;
+
+  // Regular YouTube URLs
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/live\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+    /youtube\.com\/.*[?&]v=([^&\n?#]+)/,
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
+};
+
 const markdownComponents = {
   a: ({ ...props }) => {
+    const href = props.href as string;
+    const videoId = getYouTubeVideoId(href);
+
+    // If it's a YouTube link, render as embed
+    if (videoId) {
+      return (
+        <div className="w-full aspect-video">
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title={props.children as string}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+
+    // Regular link
     return (
-      <a href={props.href} target="_blank" className="text-blue-500">
+      <a href={href} target="_blank" className="text-blue-500">
         {props.children}
       </a>
     );

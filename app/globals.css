@@ -4,8 +4,7 @@
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -45,12 +44,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 #post-wrapper::-webkit-scrollbar {
@@ -83,6 +77,32 @@ body.dark #post-wrapper::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
+#post-grid-wrapper::-webkit-scrollbar {
+  display: block;
+  height: 10px;
+  top: 30%;
+}
+
+#post-grid-wrapper::-webkit-scrollbar-button {
+  display: none;
+}
+
+#post-grid-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#post-grid-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(209, 213, 219); /*gray-300*/
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+body.dark #post-grid-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(75, 85, 99); /*gray-600*/
+  border: 2px solid rgb(31, 41, 55); /*gray-800*/
+  border-radius: 5px;
+}
+
 #showcase::-webkit-scrollbar {
   display: block;
   height: 15px;
@@ -98,11 +118,7 @@ body.dark #post-wrapper::-webkit-scrollbar-thumb {
 }
 
 #showcase::-webkit-scrollbar-thumb {
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
   padding: 5px;
 }
 
@@ -111,11 +127,7 @@ body.dark #showcase::-webkit-scrollbar-track {
 }
 
 body.dark #showcase::-webkit-scrollbar-thumb {
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
   padding: 5px;
 }
 

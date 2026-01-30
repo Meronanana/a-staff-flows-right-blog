@@ -1,3 +1,4 @@
+import PostGrid from "@/components/root/PostGrid";
 import Showcase from "@/components/root/Showcase";
 
 // SSR 필요해지면 주석 풀어서 적용하기
@@ -34,8 +35,9 @@ import Showcase from "@/components/root/Showcase";
 
 export default function Home() {
   return (
-    <main className="flex min-h-96 h-screen flex-col justify-center bg-white dark:bg-gray-800">
-      <Showcase />
+    <main className="flex h-screen flex-col bg-white dark:bg-gray-800 overflow-hidden">
+      {/* <Showcase /> */}
+      <PostGrid />
     </main>
   );
 }
