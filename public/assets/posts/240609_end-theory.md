@@ -2,7 +2,7 @@
 title: "END THEORY"
 description: "세상에서 가장 노래 잘하는 햄스터"
 coverImage: "/assets/posts/images/240609_end-theory/jacket.jpg"
-category: "band-sound"
+category: "music"
 date: "2024-06-09"
 path: "240609_end-theory"
 release: true

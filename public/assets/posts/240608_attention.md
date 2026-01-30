@@ -2,7 +2,7 @@
 title: "Attention"
 description: "아이돌인줄 알았는데, 사실 아이돌은 맞음. 그런데 혁명적인 사운드가 기다리고 있어요."
 coverImage: "/assets/posts/images/240608_attention/jacket.jpg"
-category: "k-pop"
+category: "music"
 date: "2024-06-08"
 path: "240608_attention"
 release: true
