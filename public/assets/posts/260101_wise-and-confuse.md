@@ -1,7 +1,7 @@
 ---
 title: "지혜와 혼란"
 description: "지혜 추구의 역설. 그럼에도 불구하고,"
-coverImage: "/assets/posts/images/260101_wise-and-confuse/jacket.jpg"
+coverImage: "/assets/posts/images/temlate/jacket/philosophy_1.png"
 category: "philosophy"
 date: "2026-01-01"
 path: "260101_wise-and-confuse"
