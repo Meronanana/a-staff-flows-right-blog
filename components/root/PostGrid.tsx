@@ -28,8 +28,27 @@ export default function PostGrid() {
       const width = window.innerWidth;
       const height = window.innerHeight;
 
+      // Mobile devices (iPhone, etc.)
+      if (width < 768) {
+        // For mobile, calculate rows based on available height
+        // Account for header, footer, padding, and gaps
+        const header = document.getElementById("layout-header");
+        const footer = document.getElementById("layout-footer");
+        const headerH = header?.offsetHeight || 80;
+        const footerH = footer?.offsetHeight || 64;
+        const equalSpacing = 40;
+        const paddingTop = headerH + equalSpacing;
+        const paddingBottom = footerH + equalSpacing;
+        const availableHeight = height - paddingTop - paddingBottom;
+        // Use smaller item size for mobile (around 120-140px per item with gap)
+        const itemSizeWithGap = 140; // item size + gap
+        const calculatedRows = Math.max(3, Math.floor(availableHeight / itemSizeWithGap));
+        const calculatedColumns = Math.max(2, Math.floor(width / 160));
+        setColumns(calculatedColumns);
+        setRows(calculatedRows);
+      }
       // iPad Air Landscape: 1180x820 (approximately)
-      if (width >= 1180 && width < 1920) {
+      else if (width >= 1180 && width < 1920) {
         setColumns(6);
         setRows(3);
       }
