@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 export default function JacketInteraction({ data }: { data: PostData }) {
   const overTextRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLParagraphElement>(null);
+  const dateRef = useRef<HTMLDivElement>(null);
   const packageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -67,6 +68,7 @@ export default function JacketInteraction({ data }: { data: PostData }) {
     const figureElement = document.getElementById(`jacket-figure-${data.path}`);
     const jacketOverText = document.getElementById(`jacket-over-text-${data.path}`);
     const jacketTitleText = document.getElementById(`jacket-title-text-${data.path}`);
+    const jacketDateText = document.getElementById(`jacket-date-text-${data.path}`);
 
     // Adjust font size when component mounts and on resize
     const timeoutId = setTimeout(() => {
@@ -83,24 +85,28 @@ export default function JacketInteraction({ data }: { data: PostData }) {
       figureElement?.classList.add("bg-deep-burgundy/70");
       jacketOverText?.classList.add("opacity-100");
       jacketTitleText?.classList.add("opacity-100");
+      jacketDateText?.classList.add("opacity-100");
     };
 
     const handleMouseLeave = () => {
       figureElement?.classList.remove("bg-deep-burgundy/70");
       jacketOverText?.classList.remove("opacity-100");
       jacketTitleText?.classList.remove("opacity-100");
+      jacketDateText?.classList.remove("opacity-100");
     };
 
     const handleTouchStart = () => {
       figureElement?.classList.add("bg-deep-burgundy/70");
       jacketOverText?.classList.add("opacity-100");
       jacketTitleText?.classList.add("opacity-100");
+      jacketDateText?.classList.add("opacity-100");
     };
 
     const handleTouchEnd = () => {
       figureElement?.classList.remove("bg-deep-burgundy/70");
       jacketOverText?.classList.remove("opacity-100");
       jacketTitleText?.classList.remove("opacity-100");
+      jacketDateText?.classList.remove("opacity-100");
     };
 
     figureElement?.addEventListener("mouseenter", handleMouseEnter);
@@ -117,7 +123,7 @@ export default function JacketInteraction({ data }: { data: PostData }) {
       figureElement?.removeEventListener("touchstart", handleTouchStart);
       figureElement?.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [data.path, data.description, data.title]);
+  }, [data.path, data.description, data.title, data.date]);
 
   return (
     <div className="absolute inset-0 w-full h-full select-none flex flex-col pointer-events-none">
@@ -135,6 +141,15 @@ export default function JacketInteraction({ data }: { data: PostData }) {
             style={{ fontSize: "2rem" }}
           >
             {data.title}
+          </div>
+
+          {/* Date below title */}
+          <div
+            ref={dateRef}
+            id={`jacket-date-text-${data.path}`}
+            className="w-full px-3 text-white/80 whitespace-nowrap overflow-hidden text-ellipsis text-sm opacity-0 duration-500"
+          >
+            {data.date}
           </div>
 
           {/* Description at the bottom */}
