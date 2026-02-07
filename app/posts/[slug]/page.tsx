@@ -177,7 +177,7 @@ export default function Post({ params }: Props) {
                 height={0}
                 sizes="100vw"
               />
-              <h1 className="pt-2 font-bold text-2xl">{title.title}</h1>
+              <h1 className="pt-2 font-bold text-2xl break-words whitespace-normal">{title.title}</h1>
               <p className="text-gray-400">{title.date}</p>
             </Article>
           )
