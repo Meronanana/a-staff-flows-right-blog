@@ -109,7 +109,13 @@ const markdownComponents = {
     );
   },
   ol: ({ ...props }) => {
-    return <ol className="list-decimal pl-6">{props.children}</ol>;
+    return <ol className="list-decimal pl-6 break-words whitespace-normal">{props.children}</ol>;
+  },
+  ul: ({ ...props }) => {
+    return <ul className="list-disc pl-6 break-words whitespace-normal">{props.children}</ul>;
+  },
+  li: ({ ...props }) => {
+    return <li className="break-words whitespace-normal">{props.children}</li>;
   },
   p: ({ ...props }) => {
     return <div className="whitespace-normal break-keep">{props.children}</div>;
