@@ -1,7 +1,7 @@
 ---
 title: "Delulu Pack"
 description: "키키와 Delulu Pack, 26년 겨울의 즐거운 순간"
-coverImage: "/assets/posts/images/260129_delulu-pack/jacket.webp"
+coverImage: "/assets/posts/260129_delulu-pack/images/jacket.webp"
 category: "music"
 date: "2026-01-29"
 path: "260129_delulu-pack"

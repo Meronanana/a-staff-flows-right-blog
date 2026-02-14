@@ -1,7 +1,7 @@
 ---
 title: "2025 JJS Awards"
 description: "2025년 한 해 동안 인상 깊었던 노래 13곡"
-coverImage: "/assets/posts/images/260207_2025-jjs-awards/jacket.png"
+coverImage: "/assets/posts/260207_2025-jjs-awards/images/jacket.png"
 category: "music"
 date: "2026-02-07"
 path: "260207_2025-jjs-awards"

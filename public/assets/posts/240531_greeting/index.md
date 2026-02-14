@@ -1,7 +1,7 @@
 ---
 title: "찾아 오신 분들께"
 description: "어서와"
-coverImage: "/assets/posts/images/240530_greeting/jacket.jpg"
+coverImage: "/assets/posts/240531_greeting/images/jacket.jpg"
 category: "none"
 date: "2024-05-31"
 path: "240531_greeting"

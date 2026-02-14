@@ -1,7 +1,7 @@
 ---
 title: "Higher!"
 description: "정신 차리고 보니 노래 하나 뚝딱"
-coverImage: "/assets/posts/images/240813_higher/jacket.jpg"
+coverImage: "/assets/posts/240813_higher/images/jacket.jpg"
 category: "compose"
 date: "2024-08-13"
 path: "240813_higher"
