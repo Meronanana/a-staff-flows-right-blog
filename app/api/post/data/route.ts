@@ -13,11 +13,19 @@ export async function POST(request: Request) {
   let list: string[] = body.list;
   if (list == null) {
     const dir = path.join(process.cwd(), `./public/assets/posts`);
-    list = fs
-      .readdirSync(dir, { withFileTypes: true })
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    
+    // Get slugs from both new structure (folders) and old structure (files)
+    list = entries
       .map((v) => {
-        if (v.isFile()) return v.name.split(".")[0];
-        else return "";
+        if (v.isDirectory() && v.name !== "images" && v.name !== "template") {
+          // New structure: folder with index.md
+          return v.name;
+        } else if (v.isFile() && v.name.endsWith(".md")) {
+          // Old structure: {slug}.md
+          return v.name.split(".")[0];
+        }
+        return "";
       })
       .filter((v) => v !== "");
   }
@@ -26,13 +34,22 @@ export async function POST(request: Request) {
 
   const datas = list
     .map((v) => {
-      const file = fs.readFileSync(
-        path.join(process.cwd(), `./public/assets/posts/${v}.md`),
-        "utf-8"
-      );
+      // Try new structure first, then fallback to old structure
+      const newPath = path.join(process.cwd(), `./public/assets/posts/${v}/index.md`);
+      const oldPath = path.join(process.cwd(), `./public/assets/posts/${v}.md`);
+      
+      let file: string;
+      if (fs.existsSync(newPath)) {
+        file = fs.readFileSync(newPath, "utf-8");
+      } else if (fs.existsSync(oldPath)) {
+        file = fs.readFileSync(oldPath, "utf-8");
+      } else {
+        return null;
+      }
 
       const data: PostData = matter(file).data as PostData;
       if (data.release) return data;
+      return null;
     })
     .filter((v) => v != null);
 

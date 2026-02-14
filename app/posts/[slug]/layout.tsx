@@ -10,16 +10,18 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const parentMetadata = await parent;
+  const { getPost } = await import("@/lib/posts");
+  const post = await getPost(params.slug);
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/post`, {
-    method: "POST",
-    body: JSON.stringify({ slug: params.slug }),
-  })
-    .then((res) => {
-      if (res.status === 404) return { data: undefined };
-      else return res.json();
-    })
-    .then((body) => body.data as PostData);
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      description: "The requested post could not be found.",
+    };
+  }
+
+  const data = post.data;
+  const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
 
   return {
     title: `${data.title} - ${parentMetadata.title?.absolute}`,
@@ -27,15 +29,15 @@ export async function generateMetadata(
     openGraph: {
       title: `${data.title} - ${parentMetadata.title?.absolute}`,
       description: data.description,
-      url: `${process.env.NEXT_PUBLIC_URL}/${params.slug}`,
+      url: `${baseUrl}/posts/${params.slug}`,
       siteName: "A Staff Flows Right",
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_URL}${data.coverImage}`,
+          url: `${baseUrl}${data.coverImage}`,
         },
       ],
       locale: "ko_KR",
-      type: "website",
+      type: "article",
     },
   };
 }

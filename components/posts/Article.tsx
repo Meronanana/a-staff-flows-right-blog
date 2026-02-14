@@ -33,7 +33,7 @@ export default function Article({
       ref={articleWrapperRef}
       className="article-wrapper w-[22rem] max-h-[calc(100vh-10rem)] p-2 overflow-y-auto"
     >
-      <div className="max-h-[52rem] space-y-2 overflow-y-hidden">
+      <div className="space-y-2">
         {children}
       </div>
     </div>

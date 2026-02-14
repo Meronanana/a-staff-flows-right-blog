@@ -21,9 +21,19 @@ export async function POST(request: Request) {
   }
 
   // read markdown file
+  // Try new structure first: {slug}/index.md, fallback to old structure: {slug}.md
   let markdown: string;
   try {
-    markdown = fs.readFileSync(path.join(process.cwd(), `public/assets/posts/${body.slug}.md`), "utf8");
+    const newPath = path.join(process.cwd(), `public/assets/posts/${body.slug}/index.md`);
+    const oldPath = path.join(process.cwd(), `public/assets/posts/${body.slug}.md`);
+    
+    if (fs.existsSync(newPath)) {
+      markdown = fs.readFileSync(newPath, "utf8");
+    } else if (fs.existsSync(oldPath)) {
+      markdown = fs.readFileSync(oldPath, "utf8");
+    } else {
+      return Response.json({ message: "File not found" }, { status: 404 });
+    }
   } catch (e) {
     console.log(e);
     return Response.json({ message: "File not found" }, { status: 404 });
