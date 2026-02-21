@@ -10,7 +10,7 @@ release: true
 
 ### Higher!
 
-[![Higher! - Youtube](/public/assets/posts/images/240813_higher/jacket.jpg)](http://www.youtube.com/watch?v=kN5yUxt3GGE)
+[![Higher! - Youtube](/public/assets/posts/240813_higher/images/jacket.jpg)](http://www.youtube.com/watch?v=kN5yUxt3GGE)
 
 ### 가사
 
@@ -139,7 +139,7 @@ release: true
 
 ### 원래 어떤걸 만드려고 했냐면요
 
-![Colorful Express - Peppertones](/public/assets/posts/images/240813_higher/colorful-express.png)
+![Colorful Express - Peppertones](/public/assets/posts/240813_higher/images/colorful-express.png)
 
 원래는 그냥 대놓고 신나는 노래를 만들고 싶었어요.
 페퍼톤스의 `Colorful Express` 라는 앨범이 있는데, 앨범이 전체적으로 되게 밝거든요.

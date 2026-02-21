@@ -1,7 +1,7 @@
 ---
 title: "4개월 동안 보고 느낀 기독교가 세상을 보는 방식"
 description: "성경, 예수님, 교회에 대해 4개월 동안 느낀점"
-coverImage: "/assets/posts/images/template/jacket/philosophy_1.png"
+coverImage: "/assets/posts/template/images/jacket/philosophy_1.png"
 category: "philosophy"
 date: "2026-02-01"
 path: "260201_about-crist"
