@@ -1,7 +1,7 @@
 ---
 title: "결혼과 철학"
 description: "결혼, 사랑, 용서에 대한 철학적 사고"
-coverImage: "/assets/posts/images/template/jacket/philosophy_4.png"
+coverImage: "/assets/posts/template/images/jacket/philosophy_4.png"
 category: "philosophy"
 date: "2026-01-30"
 path: "260130_marry-and-philosophy"

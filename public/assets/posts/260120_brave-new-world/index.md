@@ -1,7 +1,7 @@
 ---
 title: "멋진 신세계"
 description: "AI 시대의 미래와 가치에 대한 생각"
-coverImage: "/assets/posts/images/template/jacket/philosophy_3.png"
+coverImage: "/assets/posts/template/images/jacket/philosophy_3.png"
 category: "philosophy"
 date: "2026-01-20"
 path: "260120_brave-new-world"

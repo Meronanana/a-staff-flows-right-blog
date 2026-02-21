@@ -10,7 +10,7 @@ release: true
 
 ### 세상에 없던 맛
 
-![](/public/assets/posts/images/240608_attention/nwjns-mv-preview.png)
+![](/public/assets/posts/240608_attention/images/nwjns-mv-preview.png)
 
 22년 여름, 세상에 없던 시원함이 찾아왔다는 소문이 났어요.
 이게 어느 정도냐면, 어릴 적 냉장고에서 막 꺼낸 콜라를 따서 벌컥벌컥 마실 때 느꼈던 느낌?
@@ -18,7 +18,7 @@ release: true
 
 ---
 
-!['Attention' MV](/public/assets/posts/images/240608_attention/attention-mv-1.png)
+!['Attention' MV](/public/assets/posts/240608_attention/images/attention-mv-1.png)
 
 곡과 뮤비가 사춘기 시절 힘과 순수함을 그대로 담고 있어요.
 길을 걷다보면 자기들끼리 뭐가 그렇게 좋은지 꺄르륵 대며 지나가는 중고등학생들을 마주칠 때가 있죠.
@@ -38,7 +38,7 @@ release: true
 `유리구슬 - 오늘부터 우리는 - 시간을 달려서`로 이어지는 라인업이죠.
 하지만 뉴진스가 주는 에너지적인 측면에서 봤을 때 `시간을 달려서` 직후 나온 `너 그리고 나`를 살펴보는게 좋을 것 같아요.
 
-!['너 그리고 나' MV](/public/assets/posts/images/240608_attention/navillera-mv-1.png)
+!['너 그리고 나' MV](/public/assets/posts/240608_attention/images/navillera-mv-1.png)
 
 `너 그리고 나`는 빠른 박자에 힘 있는 보컬을 쭉 눌러담은 노래에요.
 청소년이 가지고 있는 힘을 그대로 전달을 하는데요, 소녀의 벅찬 마음(?) 같은 이미지를 가지고 있어요.
@@ -65,7 +65,7 @@ ADOR 민희진 대표가 뉴진스를 하루라도 일찍 데뷔 시키고 싶�
 뉴진스가 Young함을 앞세운 이미지로 기획된 것이 한 몫 할 것 같아요.
 저도 1년 먼저 데뷔한 뉴진스를 보고 싶긴 하네요.
 
-![19' 민지](/public/assets/posts/images/240608_attention/minji-1.png)
+![19' 민지](/public/assets/posts/240608_attention/images/minji-1.png)
 
 &new
 
@@ -75,7 +75,7 @@ ADOR 민희진 대표가 뉴진스를 하루라도 일찍 데뷔 시키고 싶�
 그냥 막연히 옛날 느낌 정도로 이해하고 있구요.
 제 머릿속에서의 Y2K는 어떤 이미지나면요,
 
-![MBC 뉴스데스크(1994.09.17)](/public/assets/posts/images/240608_attention/y2k-1.png)
+![MBC 뉴스데스크(1994.09.17)](/public/assets/posts/240608_attention/images/y2k-1.png)
 
 1994년 MBC 뉴스에서 가져왔는데요, 저게 94년도 패션이라니 'HIP' 그 자체네요.
 
