@@ -1,7 +1,7 @@
 ---
 title: "자유 1"
 description: "우리 삶에 던져진 자유를 누리고 있는가"
-coverImage: "/assets/posts/images/template/jacket/philosophy_2.png"
+coverImage: "/assets/posts/template/images/jacket/philosophy_2.png"
 category: "philosophy"
 date: "2026-02-14"
 path: "260214_freedom_1"

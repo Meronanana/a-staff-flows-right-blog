@@ -10,14 +10,14 @@ release: true
 
 ### 누나가 왜 거기서 나와
 
-![유튜브 '안될과학'](/public/assets/posts/images/240609_end-theory/unrealscience-1.png)
+![유튜브 '안될과학'](/public/assets/posts/240609_end-theory/images/unrealscience-1.png)
 
 **????????????????????????**
 
 락스타 윤하님이 안될과학에 등판했어요. 영상 썸네일을 보자 마자 헛웃음 나왔던 기억이 나네요.
 요즘 유튜브 홍보 많이 한다고는 해도 왜 별 효과 없을 것 같은 과학 유튜브를 나왔는지...
 
-!['오르트구름' 곡 해석 中](/public/assets/posts/images/240609_end-theory/unrealscience-2.png)
+!['오르트구름' 곡 해석 中](/public/assets/posts/240609_end-theory/images/unrealscience-2.png)
 
 ...... 윤하님 억지과학 좋아하시더라구요. 영상 내내 인간적인 매력이 많이 드러나는 모습이 보기 좋았어요.
 역시 연예계 기획에는 짜임새가 있네요. 제가 너무 무시한 것 같더라구요.
@@ -55,7 +55,7 @@ release: true
 
 &new
 
-!['혜성' 앨범 커버 (2007)](/public/assets/posts/images/240609_end-theory/comet-1.png)
+!['혜성' 앨범 커버 (2007)](/public/assets/posts/240609_end-theory/images/comet-1.png)
 
 `혜성`은 원래 윤하님의 일본 앨범의 타이틀곡이에요. 우리가 알고 있는 노래는 한글로 번안된 곡이구요.
 

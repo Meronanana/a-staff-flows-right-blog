@@ -29,13 +29,13 @@ release: true
 
 ### 책을 읽었는데
 
-![ux-review](/public/assets/posts/images/240530_greeting/ux-review.jpg)
+![ux-review](/public/assets/posts/240531_greeting/images/ux-review.jpg)
 
 &new
 
 ← [요렇게 생긴 책](https://book.interpark.com/product/BookDisplay.do?_method=detail&sc.saNo=001&sc.prdNo=354745229)을 읽은 적이 있어요. 책 안에 어떻게 생겼나면요,
 
-![ux-review-inside](/public/assets/posts/images/240530_greeting/ux-review-inside.png)
+![ux-review-inside](/public/assets/posts/240531_greeting/images/ux-review-inside.png)
 
 잡지 처럼 문단 가로가 짧죠? 이게 별 것 아닌거 같은데 글이 그냥 아래로 읽혀요.
 일반적인 책은 눈이 좌우로 움직이면서 내려가잖아요? 얘는 그런게 없는거죠.

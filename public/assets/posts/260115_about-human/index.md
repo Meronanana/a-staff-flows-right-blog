@@ -1,7 +1,7 @@
 ---
 title: "사람에 대하여"
 description: "사람으로 산다는 것."
-coverImage: "/assets/posts/images/template/jacket/philosophy_2.png"
+coverImage: "/assets/posts/template/images/jacket/philosophy_2.png"
 category: "philosophy"
 date: "2026-01-15"
 path: "260115_about-human"

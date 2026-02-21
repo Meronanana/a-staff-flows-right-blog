@@ -8,7 +8,7 @@ path: "260129_delulu-pack"
 release: true
 ---
 
-![KiiiKiii](/public/assets/posts/images/260129_delulu-pack/kiiikiii.jpg)
+![KiiiKiii](/public/assets/posts/260129_delulu-pack/images/kiiikiii.jpg)
 
 나는 뉴진스가 좋았다. Attention을 처음 들었을 때 드는 상쾌한 기분이 너무 좋아서였다. 그 뒤에 들었던 뉴진스 노래도 그만큼 좋았나? 그건 아니다. 그럼에도 불구하고 새 앨범이 나오면 노래를 듣지도 않고 사 모으곤 했다. 이런걸 보고 홀렸다고 표현하나보다.
 
@@ -18,7 +18,7 @@ Attention 만큼 좋아했던 것이 있는데, Ditto에서 보여준 뮤직비�
 
 404 (New Era) 의 뮤직비디오도 처음에는 Ditto 뮤직비디오와 비슷한 느낌을 준다. 하드 레퍼런스라고 할 수 있을 만큼 깔이 비슷하다. 
 
-!['404 (New Era)' 중 멤버의 어린 시절](/public/assets/posts/images/260129_delulu-pack/404-1.png)
+!['404 (New Era)' 중 멤버의 어린 시절](/public/assets/posts/260129_delulu-pack/images/404-1.png)
 
 그리고 뮤직비디오 중간중간 아티스트 한 명의 안무 위에 텍스트를 띄워둔 모습은 일꽤나 철학적인 질문을 던지는 듯 한 느낌을 받았다.
 텍스트 내용은 키키가 주로 보여주는 도전과 꿈에 대한 질문들 이었다.
